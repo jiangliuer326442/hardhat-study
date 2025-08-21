@@ -23,19 +23,19 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         log: true,
     });
 
-    if (!developmentChains.includes(network.name)) {
-        await verify(deployResult.address, [ethUsdPriceFeed]);
-    }
+    // if (!developmentChains.includes(network.name)) {
+    //     await verify(deployResult.address, [ethUsdPriceFeed]);
+    // }
 
-    log("FundMe.deployResult.address:", deployResult.address);
-    const contractAddress = deployResult.address;
-    const [feeCollector] = await ethers.getSigners();
-    const amount = ethers.utils.parseEther("0.045");
-    const tx = await feeCollector.sendTransaction({
-        to: contractAddress,
-        value: amount,
-        gasLimit: 111000
-    });
-    await tx.wait();
+    // log("FundMe.deployResult.address:", deployResult.address);
+    // const contractAddress = deployResult.address;
+    // const [feeCollector] = await ethers.getSigners();
+    // const amount = ethers.utils.parseEther("0.045");
+    // const tx = await feeCollector.sendTransaction({
+    //     to: contractAddress,
+    //     value: amount,
+    //     gasLimit: 111000
+    // });
+    // await tx.wait();
 };
 module.exports.tags = ['FundMe'];
