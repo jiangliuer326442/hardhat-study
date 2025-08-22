@@ -24,11 +24,12 @@ const config: HardhatUserConfig = {
     }
   },
   gasReporter: {
-    enabled: false,
+    enabled: true,
     currency: "USD",
     outputFile: "gas-report.txt",
     noColors: true,
     coinmarketcap: process.env.COINMARKETCAP_API_KEY,
+    token: "ETH",
   },
   etherscan: {
     apiKey: process.env.SEPOLIA_SCAN_API_KEY,
